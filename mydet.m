@@ -1,5 +1,6 @@
 
-function d = mydet(A)
+function [d,te] = mydet(A)
+  tic;
   dim = size(A);
   if dim(2)==1
     d=A;
@@ -20,5 +21,6 @@ function d = mydet(A)
       d += (-1)^(j-1) * A(1,j) * mydet(D);
     endfor
   endif
+  te = toc;
 end
 

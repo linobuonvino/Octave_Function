@@ -1,4 +1,5 @@
-function d = mydet2(A)
+function [d,te] = mydet2(A)
+  tic;
 	n = size(A, 1);
 	if n == 1
 		d = A;
@@ -10,4 +11,5 @@ function d = mydet2(A)
 			d = d + (-1)^(j+1) * A(1, j) * mydet(A(2:n, [1:j-1, j+1:n]));
 		end
 	end
+  te = toc;
 end
