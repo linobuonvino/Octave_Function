@@ -1,8 +1,9 @@
-function ConfrontoAlgoritmi;
-  d = zeros(8,4);
-  t = zeros(8,4);
-  vett=[1:8];
-  for n = 2 : 8
+function ConfrontoAlgoritmi(x);
+  d = zeros(x,4);
+  t = zeros(x,4);
+  vett=linspace(0,x/60,8);
+  vettore = [1:7];
+  for n = 2 : x
   A = randn(n);
   tic
   d(n,1) = det(A);
@@ -11,6 +12,7 @@ function ConfrontoAlgoritmi;
   [d(n,3),t(n,3)] = mydet2(A);
   [d(n,4),t(n,4)] = mydet3(A);
 endfor
-loglog(vett,t)
-legend("Det","mydet1","mydet2","mydet3")
+vett3=vett.^3;
+plot(vett,t,vett,vett3)
+legend("Det","mydet1","mydet2","mydet3","x^3")
 endfunction
