@@ -1,4 +1,4 @@
-function [x_max, y_max] = cyrcle26(z,r)
+function [x_max, y_max] = circle26(z,r,colore)
   if r < 0
     print("Raggio non valido");
     return
@@ -12,6 +12,6 @@ function [x_max, y_max] = cyrcle26(z,r)
 
   x_max = max(xc);
   y_max = max(yc);
-
-  plot(xc,yc)
+  plot(x_centro,y_centro,"+","linewidth",2);
+  plot(xc,yc,"color",colore)
   end
