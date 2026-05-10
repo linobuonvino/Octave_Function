@@ -12,6 +12,9 @@ function [x_max, y_max] = circle26(z,r,colore)
 
   x_max = max(xc);
   y_max = max(yc);
-  plot(x_centro,y_centro,"+","linewidth",2);
-  plot(xc,yc,"color",colore)
+%  plot(x_centro,y_centro,"+","linewidth",2);
+  h = fill(xc,yc,colore);
+  set(h, 'FaceAlpha', 0.15); % Trasparenza al 50
+  axis equal;
+  grid on;
   end
